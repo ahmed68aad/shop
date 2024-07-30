@@ -16,3 +16,29 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export { app, auth };
+
+
+
+// get products
+const url = "https://dummyjson.com/products"
+ 
+export async function getProducts(){
+    try {
+      const data = await fetch(url)
+      return data
+   }
+   catch(err){
+    err.message
+   }
+}
+
+//get product
+export async function getProduct(id){
+  try {
+    const data = await fetch(`${url}/${id}`)
+    return data
+  }
+  catch(err){
+    console.log(err)
+  }
+}

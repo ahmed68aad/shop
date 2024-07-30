@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../services/index';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import signImage from '../../assets/images.png'
 
 
 
@@ -47,7 +48,7 @@ function SignIn() {
 
     return (
 <>
-<section className="vh-100" style={{backgroundColor: "#eee"}}>
+<section className="py-5" style={{backgroundColor: "#eee"}}>
     <div className="container h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
         <div className="col-lg-12 col-xl-11">
@@ -81,19 +82,19 @@ function SignIn() {
 
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg" onClick={handleSignIn}>Sign In</button>
+                    <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-dark btn-lg" onClick={handleSignIn}>Sign In</button>
                   </div>
 
                   <p>Create new account?  
-                  &nbsp; <Link className="text-primary"  to={'/signup'}>Sign Up</Link>
+                  &nbsp; <Link className="text-warning"  to={'/signup'}>Sign Up</Link>
                   </p>
                 </form>
 
               </div>
               <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  className="img-fluid" alt="Sample image"/>
+                <img src={signImage}
+                  className="img-fluid rounded mx-auto " alt="Sample image"/>
               </div>
             </div>
             </div>
