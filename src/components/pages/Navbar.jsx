@@ -11,19 +11,13 @@ function Navbar() {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ms-auto">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-        </li>
-        <li className="nav-item m-1">
-        <Link  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-dark"  to="/signin">Sign In</Link>
-        </li>
-        <li className="nav-item m-1">
-        <Link  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-dark" to="/signup">Sign Up</Link>
+          <Link className="btn btn-outline-dark text-warning" aria-current="page" to="/">Log Out</Link>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-        </>
+ </>
     );
 }
 

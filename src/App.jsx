@@ -1,6 +1,7 @@
 // App.js
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+
 import SignUp from './components/pages/SignUp';
 import SignIn from './components/pages/SignIn';
 import ResendVerification from './components/pages/ResendVerification';
@@ -10,7 +11,12 @@ import Cart from './components/pages/Cart';
 import Details from './components/pages/Details';
 import Navbar from './components/pages/Navbar';
 
+
+
+
 function App() {
+
+
   return (
       <div className="App">
         <Navbar/>
@@ -24,6 +30,7 @@ function App() {
           <Route path="/resend-verification" element={<ResendVerification />} />
         </Routes>
       </div>
+      
   );
 }
 

@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { getProducts } from "../../services";
-import { Link } from "react-router-dom";
+import { Link, Routes ,Route } from "react-router-dom";
+
 
 
 function Products() {
-
     const [products ,setProducts] =useState([]);
 
     useEffect(() => {
         getProducts()
         .then(res => res.json())
-        // .then(data => console.log(data.products))
         .then(data =>setProducts(data.products))
         .catch(err => err.message)
     } , [])

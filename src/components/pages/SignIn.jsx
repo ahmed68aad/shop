@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../services/index';
@@ -25,6 +25,7 @@ function SignIn() {
         try {
           const userCredential = await signInWithEmailAndPassword(auth, email, password);
           if (userCredential.user.emailVerified) {
+            setError('')
             setMessage('Signed in successfully!');
             setTimeout(()=>{navigate('/products')} , 2000)
           } else {
@@ -40,7 +41,7 @@ function SignIn() {
           } else if (error.code === 'auth/wrong-password') {
             setError('Incorrect password.');
           } else {
-            setError('Error signing in: ' + error.message);
+            console.log('Error signing in: ' + error.message);
           }
         }
       };
@@ -59,7 +60,7 @@ function SignIn() {
 
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Welcome Back!</p>
 
-                <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-danger'>{error}</p>
+                <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-danger' >{error}</p>
                 <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-success'>{message}</p>
 
 
@@ -82,7 +83,7 @@ function SignIn() {
 
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-dark btn-lg" onClick={handleSignIn}>Sign In</button>
+                    <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-dark btn-lg text-warning" onClick={handleSignIn}>Sign In</button>
                   </div>
 
                   <p>Create new account?  
