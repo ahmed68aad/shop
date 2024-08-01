@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
+import ShopProvider from './components/pages/ShopContext.jsx'
 
 
 // import bootstrap
@@ -15,8 +16,10 @@ import '@popperjs/core/dist/umd/popper.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ShopProvider>
    <BrowserRouter>
    <App />
    </BrowserRouter>
+   </ShopProvider>
   </React.StrictMode>,
 )

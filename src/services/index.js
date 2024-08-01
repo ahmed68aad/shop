@@ -24,8 +24,7 @@ const url = "https://dummyjson.com/products"
  
 export async function getProducts(){
     try {
-      const data = await fetch(url)
-      return data
+      return await fetch(url)
    }
    catch(err){
     err.message
@@ -35,8 +34,7 @@ export async function getProducts(){
 //get product
 export async function getProduct(id){
   try {
-    const data = await fetch(`${url}/${id}`)
-    return data
+    return await fetch(`${url}/${id}`) 
   }
   catch(err){
     console.log(err)

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { sendEmailVerification } from 'firebase/auth';
 import { auth } from '../../services/index'; 
+import signImage from '../../assets/images.png'
+
 
 function ResendVerification() {
   const [email, setEmail] = useState('');
@@ -62,19 +64,19 @@ function ResendVerification() {
 
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg" onClick={handleResend}>Verify</button>
+                    <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-dark btn-lg text-warning" onClick={handleResend}>Verify</button>
                   </div>
 
                   <p>Return to home page? 
-                  &nbsp; <Link className="text-primary"  to={'/'}>Home Page</Link>
+                  &nbsp; <Link className="text-warning"  to={'/'}>Home Page</Link>
                   </p>
                 </form>
 
               </div>
-              <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+              <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 rounded">
 
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  className="img-fluid" alt="Sample image"/>
+                <img src={signImage}
+                  className="img-fluid rounded mx-auto" alt="Sample image"/>
               </div>
             </div>
             </div>

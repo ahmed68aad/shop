@@ -34,15 +34,23 @@ const handleSignUp =  async (event) => {
           await deleteUser(auth.currentUser);  
         }
         if (error.code === 'auth/invalid-email') {
+          setResendEmail('')
+          setMessage('')
           setError('Invalid email address.');
         } else if (error.code === 'auth/user-disabled') {
+          setResendEmail('')
+          setMessage('')
           setError('User disabled.');
-        } else if (error.code === 'auth/email-already-in-use') {
+        } else if (error.code === 'auth/email-already-in-use' || error.code === 'auth/requires-recent-login') {
+          setResendEmail('')
+          setMessage('')
           setError('This account already existed!');
         } else if (error.code === 'auth/wrong-password') {
+          setResendEmail('')
+          setMessage('')
           setError('Incorrect password.');
         } else {
-          setError('Error signing Up: ' + error.message);
+          console.log('Error signing Up: ' + error.message);
         }
       }
     }
@@ -65,9 +73,15 @@ const handleSignUp =  async (event) => {
 
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Welcome</p>
 
-                <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-success'>{message}{resendEmail}</p>
+                <div className="" role="alert" style={{ height: "160px", objectFit: "cover" }}>
+                 &nbsp;
+                 <span className='text-success'>{message}</span>
+                 &nbsp;
+                 <span className='text-warning'>{resendEmail}</span>
+                 <span className='text-danger'>{error}</span>
 
-                <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-danger'>{error}</p>
+                
+                </div>
 
                 <form className="mx-1 mx-md-4">
 

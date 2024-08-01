@@ -60,10 +60,11 @@ function SignIn() {
 
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Welcome Back!</p>
 
-                <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-danger' >{error}</p>
-                <p className='text-center fw-bold mb-f mx-1 mx-md-4 mt-4 text-success'>{message}</p>
-
-
+                <div className="" role="alert" style={{ height: "120px", objectFit: "cover" }}>
+                 &nbsp;
+                <span className='text-success'>{message}</span>
+                <span className='text-danger'>{error}</span>
+                </div>
                 <form className="mx-1 mx-md-4">
 
 
@@ -92,7 +93,7 @@ function SignIn() {
                 </form>
 
               </div>
-              <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+              <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 rounded">
 
                 <img src={signImage}
                   className="img-fluid rounded mx-auto " alt="Sample image"/>
